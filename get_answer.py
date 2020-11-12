@@ -110,7 +110,7 @@ if __name__ == '__main__':
     logits = [None] * KFold
     for i in range(KFold):
         path = 'results/' + exp_name + str(i)
-        logits.append(load_logits(path, test_loader))
+        logits[i] = load_logits(path, test_loader)
         logitsum = logitsum + logits[i]
 
     '''
