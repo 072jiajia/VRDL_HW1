@@ -5,15 +5,15 @@ from PIL import Image
 import numpy as np
 
 
-def get_data(KFolder, nFolder):
-    '''get the training/testing data of the nth Folder
+def get_data(KFold, nFold):
+    '''get the training/testing data of the nth Fold
     '''
     y = np.load('data/training_data/y_train.npy')
     l = len(y)
     x = ['data/training_data/' + str(i) + '.jpg' for i in range(l)]
 
-    st = l * nFolder // KFolder
-    ed = l * (nFolder + 1) // KFolder
+    st = l * nFold // KFold
+    ed = l * (nFold + 1) // KFold
 
     x_test = x[st: ed]
     y_test = y[st: ed]
@@ -32,9 +32,9 @@ def get_data(KFolder, nFolder):
 class RandomDataset(Dataset):
     ''' Dataset for Testing and Validation '''
 
-    def __init__(self, KFolder, nFolder, transform=None):
+    def __init__(self, KFold, nFold, transform=None):
         self.transform = transform
-        _, _, x_test, y_test = get_data(KFolder, nFolder)
+        _, _, x_test, y_test = get_data(KFold, nFold)
         self.labels = y_test
         self.imglist = x_test
 
@@ -55,9 +55,9 @@ class RandomDataset(Dataset):
 class BatchDataset(Dataset):
     ''' Dataset for Training '''
 
-    def __init__(self, KFolder, nFolder, transform=None):
+    def __init__(self, KFold, nFold, transform=None):
         self.transform = transform
-        x_train, y_train, _, _ = get_data(KFolder, nFolder)
+        x_train, y_train, _, _ = get_data(KFold, nFold)
         self.labels = y_train
         self.imglist = x_train
         self.labels = torch.LongTensor(self.labels)
