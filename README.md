@@ -54,10 +54,15 @@ VRDL_HW1
   +- train.py
   +- cs-t0828-2020-hw1.zip
 ```
+Then run the following command
+```
+python3 prepare.py
+```
+
 
 ## Pretrained models
 You can download pre-trained model that used for my submission from this [link](https://drive.google.com/file/d/1Ii6O2ym1O1gQxxTpdQc5wSeMjXqOuB-9/view?usp=sharing)<br>
-Unzip it and put it into the directory as below:
+Unzip it and put it into the following directory:
 ```
 VRDL_HW1
   +- data
