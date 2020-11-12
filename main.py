@@ -24,14 +24,9 @@ def _init_(args):
     args.device = device
 
 
-def prepare_data():
-    if not os.path.exists('results'):
-        os.system('python3 prepare.py')
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='VRDL HW1')
-    parser.add_argument('--exp_name', default=None)
+    parser.add_argument('--exp_name', default='APINet_KFold', type=str)
     parser.add_argument('--epochs', default=100, type=int)
     parser.add_argument('--lr', default=0.01, type=float)
     parser.add_argument('--momentum', default=0.9, type=float)
@@ -46,11 +41,9 @@ if __name__ == '__main__':
                         help='train K models for K-Fold')
     args = parser.parse_args()
 
-    if args.exp_name is None:
-        args.exp_name = 'APINet_KFold'
-
     # prepare data
-    prepare_data()
+    if not os.path.exists('data'):
+        os.system('python3 prepare.py')
 
     # start training
     for nFold in range(args.KFold):
