@@ -130,7 +130,7 @@ $ python main.py --exp_name=custom --epochs==50 --KFold=3 --n_classes=20 --n_sam
 You may interrupt your program at any time.<br>
 (ex: You're sharing the GPUs with your classmates and they think that you're using too many GPUs or you have occupied them for too long.)
 
-This code records the checkpoint in every epoch, so you may just input the same command line to resume the code.<br>
+This code records the checkpoint in every epoch, so you can just input the same command line to resume the code.<br>
 The expected training time is:
 
 GPUs | KFold | Image size | Training Epochs | Training Time
