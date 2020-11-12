@@ -2,20 +2,17 @@
 Code for (???) place solution in CS_T0828_HW1
 
 ## Abstract
-In this work, I use API-Net to train my model
-
+In this work, I use API-Net to train my model<br>
 API-Net [Paper](https://arxiv.org/pdf/2002.10191.pdf) | [GitHub](https://github.com/PeiqinZhuang/API-Net)
 
-I trained K models for K different splits of training/validation data.
-
+I trained K models for K different splits of training/validation data.<br>
 K-Fold [簡介](https://medium.com/@chih.sheng.huang821/%E4%BA%A4%E5%8F%89%E9%A9%97%E8%AD%89-cross-validation-cv-3b2c714b18db) | [summary](https://medium.com/datadriveninvestor/k-fold-cross-validation-6b8518070833)
 
-In testing phase, I computed K logits by the K different models.
-
+In testing phase, I computed K logits by the K different models.<br>
 Add up the logits and choose the category with the largest value.
 
 - The submission with the highest score I made was obtained from 5 models with the best validation accuracy.
-- It's just 0.02% better than the submission obtained from all the models.
+- In fact, it's just 0.02% better than the submission obtained from all the models.
 
 ## Hardware
 The following specs were used to create the solutions.
@@ -39,8 +36,7 @@ pip3 install -r requirements.txt
 ```
 
 ## Dataset Preparation
-You need to download the zip file "cs-t0828-2020-hw1.zip" by yourself.
-
+You need to download the zip file "cs-t0828-2020-hw1.zip" by yourself.<br>
 And put the zip file into the same directory as main.py, the directory is structured as:
 ```
 VRDL_HW1
@@ -58,19 +54,16 @@ You can simply run the following command to train your models and make submissio
 ```
 $ python main.py
 ```
-If you'd like to train in custom hyperparameters, change the hyperparameters to whatever you like.
-
+If you'd like to train in custom hyperparameters, change the hyperparameters to whatever you like.<br>
 Or you may try the following command.
 ```
 $ python main.py --exp_name=custom --epochs==50 --KFold=3 --n_classes=20 --n_samples=3
 ```
 
-You may interrupt your program at any time.
-
+You may interrupt your program at any time.<br>
 (for example: you're sharing the GPU with your classmates and they think that you use too many GPUs.)
 
-This code saves the checkpoint in every epoch, so you may just input the same command line to resume the code.
-
+This code records the checkpoint in every epoch, so you may just input the same command line to resume the code.<br>
 The expected training time is:
 
 GPUs | KFold | Image size | Training Epochs | Training Time
@@ -83,7 +76,6 @@ In main.py, after we finish training K models, it will directly call
 ```
 python3 get_answer.py (exp_name)
 ```
-It will generate a file (exp_name).csv which is the prediction of the testing dataset
-
-Use the csv file to make your submission.
+It will generate a file (exp_name).csv which is the prediction of the testing dataset<br>
+Use the csv file to make your submission!
 
