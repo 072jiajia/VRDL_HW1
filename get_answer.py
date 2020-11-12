@@ -97,6 +97,9 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         exp_name = sys.argv[1]
 
+    # compute the logits by all the models you have train 
+    # until now in this experiment
+    # To reproduce my submission, you may delete the code below
     logitsum = 0
     logits = []
     try:
@@ -108,9 +111,19 @@ if __name__ == '__main__':
             i += 1
     except:
         pass
+    '''
+    # To reproduce my submission, you may use the code below
+    logitsum = 0
+    logits = [None] * 10
+    for i in [0, 1, 3, 5, 7]:
+        path = 'results/' + exp_name + str(i)
+        logits[i] = load_logits(path, test_loader)
+        logitsum = logitsum + logits[i]
+    '''
 
     pred = logitsum.argmax(axis=1)
 
+    # write down my prediction
     with open('data/label.txt', 'r') as LabelFile:
         labels = LabelFile.readlines()
     with open(exp_name + '_pred.csv', 'w') as WriteFile:
