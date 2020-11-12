@@ -4,24 +4,27 @@ Code for (???) place solution in CS_T0828_HW1
 ## Abstract
 In this work, I use API-Net to train my model
 
-API-Net [paper](https://arxiv.org/pdf/2002.10191.pdf) | [github](https://github.com/PeiqinZhuang/API-Net)
+API-Net [Paper](https://arxiv.org/pdf/2002.10191.pdf) | [GitHub](https://github.com/PeiqinZhuang/API-Net)
 
-I train K models for K different splits of training/testing data.
+I trained K models for K different splits of training/testing data.
 
 K-Fold [簡介](https://medium.com/@chih.sheng.huang821/%E4%BA%A4%E5%8F%89%E9%A9%97%E8%AD%89-cross-validation-cv-3b2c714b18db) | [summary](https://medium.com/datadriveninvestor/k-fold-cross-validation-6b8518070833)
 
-In testing phase, I compute K logits by the K different models.
+In testing phase, I computed K logits by the K different models.
 
-Add up the logits and choose the category with largest value.
+Add up the logits and choose the category with the largest value.
+
+- The submission with the highest score I made was obtained from 5 models with the best validation accuracy.
+- It's just 0.02% better than the submission obtained from all the models.
 
 ## Hardware
-The following specs were used to create the original solutions.
+The following specs were used to create the solutions.
 - Ubuntu 18.04.5 LTS
 - Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz
 - 4x GeForce RTX 2080 Ti
 
 ## Reproducing Submission
-To reproduct my submission, do the following steps:
+To reproduct submission, do the following steps:
 1. [Installation](#installation)
 2. [Prepare Data](#dataset-preparation)
 3. [Train](#train-models)
@@ -44,14 +47,14 @@ VRDL_HW1
   +- datasets
   +- model
   +- utils
-  +- cs-t0828-2020-hw1.zip
   +- get_answer.py
   +- main.py
   +- train.py
+  +- cs-t0828-2020-hw1.zip
 ```
 
 ## Train Models
-You can simply run the following command to train models and make submission.
+You can simply run the following command to train your models and make submission.
 ```
 $ python main.py
 ```
