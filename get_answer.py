@@ -98,11 +98,16 @@ if __name__ == '__main__':
         exp_name = sys.argv[1]
 
     logitsum = 0
-    logits = [None] * 10
-    for i in range(10):
-        path = 'results/' + exp_name + str(i)
-        logits[i] = load_logits(path, test_loader)
-        logitsum = logitsum + logits[i]
+    logits = []
+    try:
+        i = 0
+        while True:
+            path = 'results/' + exp_name + str(i)
+            logits.append(load_logits(path, test_loader))
+            logitsum = logitsum + logits[i]
+            i += 1
+    except:
+        pass
 
     pred = logitsum.argmax(axis=1)
 
