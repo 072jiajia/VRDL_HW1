@@ -90,27 +90,29 @@ def load_logits(path, test_loader):
         np.save(npfilepath, logit)
     return np.load(npfilepath)
 
-
 if __name__ == '__main__':
     test_loader, INDEX = load_testdata()
     exp_name = 'APINet_KFold'
+    KFold = 10
     if len(sys.argv) > 1:
         exp_name = sys.argv[1]
+    if len(sys.argv) > 2:
+        KFold = sys.argv[2]
 
-    # compute the logits by all the models you have train 
+    # prepare data
+    if not os.path.exists('data'):
+        os.system('python3 prepare.py')
+
+    # compute the logits by all the models you have train
     # until now in this experiment
     # To reproduce my submission, you may delete the code below
     logitsum = 0
-    logits = []
-    try:
-        i = 0
-        while True:
-            path = 'results/' + exp_name + str(i)
-            logits.append(load_logits(path, test_loader))
-            logitsum = logitsum + logits[i]
-            i += 1
-    except:
-        pass
+    logits = [None] * KFold
+    for i in range(KFold):
+        path = 'results/' + exp_name + str(i)
+        logits.append(load_logits(path, test_loader))
+        logitsum = logitsum + logits[i]
+
     '''
     # To reproduce my submission, you may use the code below
     logitsum = 0
