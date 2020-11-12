@@ -6,7 +6,7 @@ In this work, I use API-Net to train my model
 
 API-Net [Paper](https://arxiv.org/pdf/2002.10191.pdf) | [GitHub](https://github.com/PeiqinZhuang/API-Net)
 
-I trained K models for K different splits of training/testing data.
+I trained K models for K different splits of training/validation data.
 
 K-Fold [簡介](https://medium.com/@chih.sheng.huang821/%E4%BA%A4%E5%8F%89%E9%A9%97%E8%AD%89-cross-validation-cv-3b2c714b18db) | [summary](https://medium.com/datadriveninvestor/k-fold-cross-validation-6b8518070833)
 
@@ -75,7 +75,7 @@ The expected training time is:
 
 GPUs | KFold | Image size | Training Epochs | Training Time
 ------------- | ------------- | ------------- | ------------- | -------------
-4x 2080 Ti | 10 | 320 | 100 | 15 hours
+4x 2080 Ti | 10 | 320 | 100 | 19 hours
 
 
 ## Make Submission
