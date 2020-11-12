@@ -53,7 +53,7 @@ if __name__ == '__main__':
     prepare_data()
 
     # start training
-    for nFold in range(10):
+    for nFold in range(args.KFold):
         args.nFold = nFold
         _init_(args)
         train(args)
