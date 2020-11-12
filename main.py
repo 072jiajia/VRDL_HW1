@@ -13,7 +13,7 @@ device = torch.device("cuda")
 
 def _init_(args):
     # initialize parameters
-    path = 'results/' + args.exp_name + str(args.nFolder)
+    path = 'results/' + args.exp_name + str(args.nFold)
     if not os.path.exists(path):
         os.mkdir(path)
     args.resume = path + '/checkpoint.pth.tar'
@@ -42,19 +42,19 @@ if __name__ == '__main__':
                         help='number of samples in each class')
     parser.add_argument('--batch-size', default=100, type=int,
                         help='validation batch size')
-    parser.add_argument('--KFolder', default=10, type=int,
-                        help='train K models for K-Folder')
+    parser.add_argument('--KFold', default=10, type=int,
+                        help='train K models for K-Fold')
     args = parser.parse_args()
 
     if args.exp_name is None:
-        args.exp_name = 'APINet_KFolder'
+        args.exp_name = 'APINet_KFold'
 
     # prepare data
     prepare_data()
 
     # start training
-    for nFolder in range(10):
-        args.nFolder = nFolder
+    for nFold in range(10):
+        args.nFold = nFold
         _init_(args)
         train(args)
 
