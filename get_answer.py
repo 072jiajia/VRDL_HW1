@@ -93,7 +93,7 @@ def load_logits(path, test_loader):
 
 if __name__ == '__main__':
     test_loader, INDEX = load_testdata()
-    exp_name = 'APINet_KFolder'
+    exp_name = 'APINet_KFold'
     if len(sys.argv) > 1:
         exp_name = sys.argv[1]
 
