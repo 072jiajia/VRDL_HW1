@@ -139,6 +139,7 @@ It will generate a file {your exp_name}.csv which is the prediction of the testi
 Use the csv file to make your submission!
 
 ## Citation
+```
 @inproceedings{zhuang2020learning,
   title={Learning Attentive Pairwise Interaction for Fine-Grained Classification.},
   author={Zhuang, Peiqin and Wang, Yali and Qiao, Yu},
@@ -146,3 +147,4 @@ Use the csv file to make your submission!
   pages={13130--13137},
   year={2020}
 }
+```
