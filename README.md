@@ -1,5 +1,5 @@
 # VRDL Homework 1
-Code for (???) place solution in CS_T0828_HW1
+Code for 2nd place solution in CS_T0828_HW1
 
 ## Abstract
 In this work, I use API-Net to train my model<br>
