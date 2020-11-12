@@ -42,7 +42,7 @@ pip3 install -r requirements.txt
 ```
 
 ## Dataset Preparation
-You need to download the zip file "cs-t0828-2020-hw1.zip" by yourself.<br>
+You need to download the zip file [cs-t0828-2020-hw1.zip](https://www.kaggle.com/c/cs-t0828-2020-hw1/data) by yourself.<br>
 And put the zip file into the same directory as main.py, the directory is structured as:
 ```
 VRDL_HW1
@@ -54,7 +54,7 @@ VRDL_HW1
   +- train.py
   +- cs-t0828-2020-hw1.zip
 ```
-Then run the following command
+Then run the following command to prepare training/testing data
 ```
 python3 prepare.py
 ```
