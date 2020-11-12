@@ -68,14 +68,14 @@ def train(args):
 
     # Load Data
     train_dataset = BatchDataset(
-        args.KFolder, args.nFolder, transform=train_tfms)
+        args.KFold, args.nFold, transform=train_tfms)
     train_sampler = BalancedBatchSampler(
         train_dataset, args.n_classes, args.n_samples)
     train_loader = torch.utils.data.DataLoader(
         train_dataset, batch_sampler=train_sampler,
         num_workers=15)
 
-    val_dataset = RandomDataset(args.KFolder, args.nFolder, transform=val_tfms)
+    val_dataset = RandomDataset(args.KFold, args.nFold, transform=val_tfms)
     val_loader = torch.utils.data.DataLoader(
         val_dataset, batch_size=args.batch_size, shuffle=False,
         num_workers=15)
