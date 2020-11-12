@@ -1,4 +1,4 @@
-# Selected Topics in Visual Recognition using Deep Learning Homework 1
+# VRDL Homework 1
 Code for (???) place solution in CS_T0828_HW1
 
 ## Abstract
