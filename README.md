@@ -57,7 +57,7 @@ VRDL_HW1
 ```
 
 ## Pretrained models
-You can download pre-trained model that used for my submission from this [link](http)
+You can download pre-trained model that used for my submission from this [link](https://drive.google.com/file/d/1Ii6O2ym1O1gQxxTpdQc5wSeMjXqOuB-9/view?usp=sharing)
 Unzip it and put it into the directory as below:
 ```
 VRDL_HW1
