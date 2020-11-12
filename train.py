@@ -168,7 +168,7 @@ def train_one_epoch(train_loader, model, optimizer, epoch, val_loader, args):
                       softmax_loss=softmax_losses,
                       rank_loss=rank_losses, acc=acc), end='\r')
 
-    print(' ' * 100, end='\r')
+    print(' ' * 120, end='\r')
     # save the result of the training phase of this epoch
     args.io.cprint('Epoch: {0}  Loss {loss.avg:.4f}  '
                    'SoftmaxLoss {softmax_loss.avg:.4f}  '
