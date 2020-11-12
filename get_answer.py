@@ -11,7 +11,7 @@ from PIL import Image
 from model import API_Net
 
 # ID of GPUs gonna be used
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1, 2, 3"
 device = torch.device("cuda")
 
 
